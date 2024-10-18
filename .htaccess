@@ -1,0 +1,8 @@
+AddType text/javascript .mjs
+
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "https://card-count.com"
+    Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+    Header set Cross-Origin-Opener-Policy "same-origin"
+</IfModule>

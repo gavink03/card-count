@@ -1,0 +1,16 @@
+body {
+  font-family: "Lato", sans-serif;
+  background-image: url(bg2.png);
+  background-size: 100%;
+  background-color: #027339;
+}
+
+#gSignIn {
+  width: 320px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.g_id_signin {
+  width: 100%;
+}
