@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Auth Handler</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  </head>
+  <body>
+    <h1>Authentication Redirect Handler</h1>
+    <script type="text/javascript">
+      var firebaseConfig = {
+        apiKey: "AIzaSyCLwbj8YuNx-WH-Hz3UDMG0wFkkS9xoFcQ",
+        authDomain: "card-count.com", // Update to your custom domain without https
+        projectId: "card-count-ea551",
+        storageBucket: "card-count-ea551.appspot.com",
+        messagingSenderId: "792001225534",
+        appId: "1:792001225534:web:65899646a0f5c7239b026f",
+        measurementId: "G-QQB5KR1HG7",
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+      // Handle the redirect result
+      firebase
+        .auth()
+        .getRedirectResult()
+        .then(function (result) {
+          if (result.credential) {
+            var token = result.credential.accessToken;
+            console.log("Google sign-in successful:", result.user);
+            // Redirect to your desired page or dashboard after successful login
+            window.location.href = "https://card-count.com/"; // Redirect after success
+          } else {
+            console.log("No sign-in credentials found.");
+            window.location.href = "https://card-count.com/"; // Redirect back to login if no credentials
+          }
+        })
+        .catch(function (error) {
+          console.error("Error during Google sign-in:", error);
+          window.location.href = "https://card-count.com/"; // Redirect back to login on error
+        });
+    </script>
+  </body>
+</html>
