@@ -1,6 +1,7 @@
 body {
   font-family: "Lato", sans-serif;
-  background-image: url(/img/blackBG);
+  background-image: url(../img/blackBG.jpg);
+  background-size: 100%;
   background-color: #312e2b;
   margin: 0px;
 }
@@ -18,7 +19,7 @@ a,
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #262421;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 8px;
@@ -38,7 +39,7 @@ a,
 .sidenav a:hover,
 .sidenav p:hover {
   box-shadow: -5px 0px 6px rgba(0, 0, 0, 0.4), 5px 0px 6px rgba(0, 0, 0, 0.4);
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: #171614;
   cursor: pointer;
 }
 
@@ -70,7 +71,7 @@ a,
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #262421;
   border-radius: 1.5rem;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
   cursor: pointer;
@@ -96,7 +97,7 @@ a,
   text-align: center;
   width: 410px;
   height: 575px;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #262421;
   border-radius: 1.5rem;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
 }
@@ -124,7 +125,7 @@ a,
   text-align: center;
   width: 410px;
   height: 575px;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #262421;
   border-radius: 1.5rem;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
 }
@@ -145,7 +146,7 @@ a,
 #play:hover,
 #basicStrategy:hover {
   box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.4);
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: #171614;
 }
 
 #optionsPanel {
@@ -324,7 +325,7 @@ input:checked + .slider:before {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: #262421;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 8px;

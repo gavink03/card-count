@@ -7,7 +7,7 @@ body {
   font-family: "Arial", sans-serif;
   text-align: center;
   margin: 0px;
-  background-image: url(/img/CardCountTable.png);
+  background-image: url(/img/tableBGH.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position-x: center;
@@ -73,7 +73,13 @@ body {
   margin: 1px;
   width: 100px;
   height: 100%;
-  background: repeating-linear-gradient(0deg, white, white 2px, transparent 1px, transparent 3px);
+  background: repeating-linear-gradient(
+    0deg,
+    white,
+    white 2px,
+    transparent 1px,
+    transparent 3px
+  );
 }
 
 #chips {

@@ -109,6 +109,14 @@ var all = Array.from({ length: decks }, () => cards).flat();
 const fullShoe = Array.from({ length: decks }, () => cards).flat();
 var errors = [];
 
+if (hitOn17 === "true") {
+  document.getElementsByTagName("body")[0].style.backgroundImage =
+    "url(/img/tableBGH.png)";
+} else {
+  document.getElementsByTagName("body")[0].style.backgroundImage =
+    "url(/img/tableBGS.png)";
+}
+
 const chip05 = 0.5;
 const chip1 = 1;
 const chip5 = 5;
@@ -318,43 +326,56 @@ for (i = 0; originalChipsUsed.length > i; i++) {
 function syncChipsUsedAndNumOfChips() {
   chipsUsed.sort((a, b) => a.value - b.value);
   if (chipsUsed.findIndex((element) => element.value === 0.5) != -1) {
-    chipsUsed[chipsUsed.findIndex((element) => element.value === 0.5)].count = numchip05;
+    chipsUsed[chipsUsed.findIndex((element) => element.value === 0.5)].count =
+      numchip05;
   }
   if (chipsUsed.findIndex((element) => element.value === 1) != -1) {
-    chipsUsed[chipsUsed.findIndex((element) => element.value === 1)].count = numchip1;
+    chipsUsed[chipsUsed.findIndex((element) => element.value === 1)].count =
+      numchip1;
   }
   if (chipsUsed.findIndex((element) => element.value === 5) != -1) {
-    chipsUsed[chipsUsed.findIndex((element) => element.value === 5)].count = numchip5;
+    chipsUsed[chipsUsed.findIndex((element) => element.value === 5)].count =
+      numchip5;
   }
   if (chipsUsed.findIndex((element) => element.value === 10) != -1) {
-    chipsUsed[chipsUsed.findIndex((element) => element.value === 10)].count = numchip10;
+    chipsUsed[chipsUsed.findIndex((element) => element.value === 10)].count =
+      numchip10;
   }
   if (chipsUsed.findIndex((element) => element.value === 20) != -1) {
-    chipsUsed[chipsUsed.findIndex((element) => element.value === 20)].count = numchip20;
+    chipsUsed[chipsUsed.findIndex((element) => element.value === 20)].count =
+      numchip20;
   }
   if (chipsUsed.findIndex((element) => element.value === 25) != -1) {
-    chipsUsed[chipsUsed.findIndex((element) => element.value === 25)].count = numchip25;
+    chipsUsed[chipsUsed.findIndex((element) => element.value === 25)].count =
+      numchip25;
   }
   if (chipsUsed.findIndex((element) => element.value === 50) != -1) {
-    chipsUsed[chipsUsed.findIndex((element) => element.value === 50)].count = numchip50;
+    chipsUsed[chipsUsed.findIndex((element) => element.value === 50)].count =
+      numchip50;
   }
   if (chipsUsed.findIndex((element) => element.value === 100) != -1) {
-    chipsUsed[chipsUsed.findIndex((element) => element.value === 100)].count = numchip100;
+    chipsUsed[chipsUsed.findIndex((element) => element.value === 100)].count =
+      numchip100;
   }
   if (chipsUsed.findIndex((element) => element.value === 250) != -1) {
-    chipsUsed[chipsUsed.findIndex((element) => element.value === 250)].count = numchip250;
+    chipsUsed[chipsUsed.findIndex((element) => element.value === 250)].count =
+      numchip250;
   }
   if (chipsUsed.findIndex((element) => element.value === 500) != -1) {
-    chipsUsed[chipsUsed.findIndex((element) => element.value === 500)].count = numchip500;
+    chipsUsed[chipsUsed.findIndex((element) => element.value === 500)].count =
+      numchip500;
   }
   if (chipsUsed.findIndex((element) => element.value === 1000) != -1) {
-    chipsUsed[chipsUsed.findIndex((element) => element.value === 1000)].count = numchip1000;
+    chipsUsed[chipsUsed.findIndex((element) => element.value === 1000)].count =
+      numchip1000;
   }
   if (chipsUsed.findIndex((element) => element.value === 2000) != -1) {
-    chipsUsed[chipsUsed.findIndex((element) => element.value === 2000)].count = numchip2000;
+    chipsUsed[chipsUsed.findIndex((element) => element.value === 2000)].count =
+      numchip2000;
   }
   if (chipsUsed.findIndex((element) => element.value === 5000) != -1) {
-    chipsUsed[chipsUsed.findIndex((element) => element.value === 5000)].count = numchip5000;
+    chipsUsed[chipsUsed.findIndex((element) => element.value === 5000)].count =
+      numchip5000;
   }
 
   for (chip of chipsUsed) {
@@ -374,8 +395,13 @@ function incrumentUp() {
     let nextChip = chipsUsed[i + 1];
     if (originalChipsUsed.includes(currentChip) == false) {
       for (chip of chipsUsed) {
-        var numOfNewChips = (currentChip.value * currentChip.count) / chip.value;
-        if (numOfNewChips >= 1 && chip != currentChip && chip.value > currentChip.value) {
+        var numOfNewChips =
+          (currentChip.value * currentChip.count) / chip.value;
+        if (
+          numOfNewChips >= 1 &&
+          chip != currentChip &&
+          chip.value > currentChip.value
+        ) {
           var numOfChipsToGive = 1 / currentChip.value;
           for (i2 = 0; i2 < chip.value; i2 += currentChip.value) {
             currentChip.count--;
@@ -405,13 +431,21 @@ function incrumentUp() {
       }
     }
 
-    while (currentChip.count > (nextChip.count + 1) * 2 && currentChip.original != false && nextChip.original != false) {
+    while (
+      currentChip.count > (nextChip.count + 1) * 2 &&
+      currentChip.original != false &&
+      nextChip.original != false
+    ) {
       if (nextChip.value % currentChip.value == 0) {
-        const findNextChip = chipsUsed.find((element) => element.value === nextChip.value);
+        const findNextChip = chipsUsed.find(
+          (element) => element.value === nextChip.value
+        );
         if (findNextChip) {
           findNextChip.count++;
         }
-        const findCurrentChip = chipsUsed.find((element) => element.value === currentChip.value);
+        const findCurrentChip = chipsUsed.find(
+          (element) => element.value === currentChip.value
+        );
         if (findCurrentChip) {
           findCurrentChip.count -= nextChip.value / currentChip.value;
         }
@@ -517,13 +551,21 @@ function checkChips() {
     let currentChip = chipsUsed[i];
     let nextChip = chipsUsed[i + 1];
 
-    while (currentChip.count < nextChip.count && currentChip.original != false && nextChip.original != false) {
+    while (
+      currentChip.count < nextChip.count &&
+      currentChip.original != false &&
+      nextChip.original != false
+    ) {
       if (nextChip.value % currentChip.value == 0) {
-        const findNextChip = chipsUsed.find((element) => element.value === nextChip.value);
+        const findNextChip = chipsUsed.find(
+          (element) => element.value === nextChip.value
+        );
         if (findNextChip) {
           findNextChip.count--;
         }
-        const findCurrentChip = chipsUsed.find((element) => element.value === currentChip.value);
+        const findCurrentChip = chipsUsed.find(
+          (element) => element.value === currentChip.value
+        );
         if (findCurrentChip) {
           findCurrentChip.count += nextChip.value / currentChip.value;
         }
@@ -623,9 +665,15 @@ function checkChips() {
   }
 }
 
-document.getElementById("progressBarDecks").style = `background: repeating-linear-gradient(to bottom, black, black 3px, transparent 0px, transparent ${100 / decks}%);`;
+document.getElementById(
+  "progressBarDecks"
+).style = `background: repeating-linear-gradient(to bottom, black, black 3px, transparent 0px, transparent ${
+  100 / decks
+}%);`;
 function showDecks() {
-  document.getElementById("myBar").style = `height: ${(all.length / fullShoe.length) * 100}%`;
+  document.getElementById("myBar").style = `height: ${
+    (all.length / fullShoe.length) * 100
+  }%`;
 }
 
 const cells = document.querySelectorAll("td");
@@ -844,10 +892,20 @@ function stand() {
         src.appendChild(img);
         dealerHandValue = calculateDealerHand();
       }
-      if (playerHandValue == 21 && handIndex.length == 2 && index == 0 && numOfHands == 1 && (dealerHandValue != 21 || dealerHand.length > 2)) {
+      if (
+        playerHandValue == 21 &&
+        handIndex.length == 2 &&
+        index == 0 &&
+        numOfHands == 1 &&
+        (dealerHandValue != 21 || dealerHand.length > 2)
+      ) {
         pay3to1(playerBet1, "chipsBet1");
         blackJack = true;
-      } else if ((handIndex == hand2 && playerHandValue > 21) || (handIndex == hand3 && playerHandValue > 21) || (handIndex == hand4 && playerHandValue > 21)) {
+      } else if (
+        (handIndex == hand2 && playerHandValue > 21) ||
+        (handIndex == hand3 && playerHandValue > 21) ||
+        (handIndex == hand4 && playerHandValue > 21)
+      ) {
         win = false;
         tie = false;
         blackJack = false;
@@ -855,7 +913,11 @@ function stand() {
         win = false;
         tie = false;
         blackJack = false;
-      } else if (dealerHandValue < playerHandValue && dealerHandValue <= 21 && playerHandValue <= 21) {
+      } else if (
+        dealerHandValue < playerHandValue &&
+        dealerHandValue <= 21 &&
+        playerHandValue <= 21
+      ) {
         win = true;
         tie = false;
         blackJack = false;
@@ -1955,7 +2017,10 @@ function findBestMove(hand) {
   }
 
   if (bestMove == "DAS") {
-    if (doubleAfterSplitting == "true" || (doubleAfterSplitting == "false" && numOfHands == 1)) {
+    if (
+      doubleAfterSplitting == "true" ||
+      (doubleAfterSplitting == "false" && numOfHands == 1)
+    ) {
       return "Double";
     }
   }
@@ -1997,7 +2062,10 @@ function findBestMove(hand) {
   }
 
   if (bestMove == "DAS") {
-    if (doubleAfterSplitting == "true" || (doubleAfterSplitting == "false" && numOfHands == 1)) {
+    if (
+      doubleAfterSplitting == "true" ||
+      (doubleAfterSplitting == "false" && numOfHands == 1)
+    ) {
       return "Double";
     }
   }
@@ -2369,23 +2437,27 @@ function highlightHand() {
   if (numOfHands > 1 && currentHand <= numOfHands) {
     switch (currentHand) {
       case 1:
-        return (document.getElementById("hand1").style = "outline: solid white");
+        return (document.getElementById("hand1").style =
+          "outline: solid white");
       case 2:
         if (splittable(hand2) && numOfHands <= 3) {
           document.getElementById("split").style.display = "inline-block";
         } else {
           document.getElementById("split").style.display = "none";
         }
-        return (document.getElementById("hand2").style = "outline: solid white");
+        return (document.getElementById("hand2").style =
+          "outline: solid white");
       case 3:
         if (splittable(hand3) && numOfHands <= 3) {
           document.getElementById("split").style.display = "inline-block";
         } else {
           document.getElementById("split").style.display = "none";
         }
-        return (document.getElementById("hand3").style = "outline: solid white");
+        return (document.getElementById("hand3").style =
+          "outline: solid white");
       case 4:
-        return (document.getElementById("hand4").style = "outline: solid white");
+        return (document.getElementById("hand4").style =
+          "outline: solid white");
     }
   }
 }
@@ -2945,12 +3017,20 @@ document.getElementById("endGame").addEventListener("click", function () {
 
       if (error.splittable == true) {
         var paragraphContent = document.createTextNode(
-          `you ${wrongMove} on a pair of ${error.card.toString().toLowerCase()}s vs dealers ${error.dealersCard} instead of ${correctMove} on a count of ${error.trueCount}`
+          `you ${wrongMove} on a pair of ${error.card
+            .toString()
+            .toLowerCase()}s vs dealers ${
+            error.dealersCard
+          } instead of ${correctMove} on a count of ${error.trueCount}`
         );
       } else if (error.soft == false) {
-        var paragraphContent = document.createTextNode(`you ${wrongMove} on a ${error.playersHand} vs dealers ${error.dealersCard} instead of ${correctMove} on a count of ${error.trueCount}`);
+        var paragraphContent = document.createTextNode(
+          `you ${wrongMove} on a ${error.playersHand} vs dealers ${error.dealersCard} instead of ${correctMove} on a count of ${error.trueCount}`
+        );
       } else {
-        var paragraphContent = document.createTextNode(`you ${wrongMove} on a soft ${error.playersHand} vs dealers ${error.dealersCard} instead of ${correctMove} on a count of ${error.trueCount}`);
+        var paragraphContent = document.createTextNode(
+          `you ${wrongMove} on a soft ${error.playersHand} vs dealers ${error.dealersCard} instead of ${correctMove} on a count of ${error.trueCount}`
+        );
       }
       newParagraph.appendChild(paragraphContent);
       const errorsDiv = document.getElementById("errors");
@@ -2968,7 +3048,9 @@ document.getElementById("endGame").addEventListener("click", function () {
     document.getElementById("wlTotal").innerHTML = `Total Profit: +$${wlTotal}`;
   } else {
     document.getElementById("wlTotal").style.color = "red";
-    document.getElementById("wlTotal").innerHTML = `Total Losses: -$${Math.abs(wlTotal)}`;
+    document.getElementById("wlTotal").innerHTML = `Total Losses: -$${Math.abs(
+      wlTotal
+    )}`;
   }
 });
 
