@@ -1,60 +1,3 @@
-/*import { initializeApp } from 'firebase/app';
-import { getFirestore, doc, getDoc } from 'firebase/firestore/lite';
-import 'firebase/firebase-auth.js';
-import * as firebaseui from 'firebaseui/dist/firebaseui.js';
-
-const firebaseConfig = {
-  apiKey: "AIzaSyCLwbj8YuNx-WH-Hz3UDMG0wFkkS9xoFcQ",
-  authDomain: "card-count-ea551.firebaseapp.com",
-  projectId: "card-count-ea551",
-  storageBucket: "card-count-ea551.appspot.com",
-  messagingSenderId: "792001225534",
-  appId: "1:792001225534:web:a1c456e03f1005939b026f",
-  measurementId: "G-VLZLQLR8QZ",
-};
-
-const app = initializeApp(firebaseConfig);
-
-var ui = firebaseui.auth.AuthUI(firebase.auth());
-
-var uiConfig = {
-  callbacks: {
-    signInSuccessWithAuthResult: function(authResult, redirectUrl) {
-      return true;
-    },
-    uiShown: function() {
-      document.getElementById('loader').style.display = 'none';
-    }
-  },
-  signInFlow: 'popup', 
-  signInSuccessUrl: 'card-count.com', // Replace with your URL
-  signInOptions: [
-    {
-      provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
-      signInMethod: firebase.auth.EmailAuthProvider.EMAIL_LINK_SIGN_IN_METHOD
-    },
-    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-    firebase.auth.PhoneAuthProvider.PROVIDER_ID
-  ],
-  tosUrl: 'card-count.com', // Replace with your URL
-  privacyPolicyUrl: 'card-count.com' // Replace with your URL
-};
-
-if (ui.isPendingRedirect()) {
-  ui.start('#firebaseui-auth-container', uiConfig);
-}
-
-ui.start('#firebaseui-auth-container', uiConfig);
-
-document.getElementById("pfp").addEventListener("click", function () {
-  ui.start('#firebaseui-auth-container', uiConfig);
-});
-
-document.getElementById('showFB').addEventListener('click', function() { ui.start('#firebaseui-auth-container', uiConfig); });
-
-document.addEventListener('DOMContentLoaded', function() { ui.start('#firebaseui-auth-container', uiConfig); });
-*/
-
 if (localStorage.getItem("hitOn17") == null) {
   localStorage.setItem("hitOn17", false);
 }
@@ -137,9 +80,11 @@ document.getElementById("hitOn17").addEventListener("change", function () {
   changeOptions("hitOn17");
 });
 
-document.getElementById("doubleAfterSplitting").addEventListener("change", function () {
-  changeOptions("doubleAfterSplitting");
-});
+document
+  .getElementById("doubleAfterSplitting")
+  .addEventListener("change", function () {
+    changeOptions("doubleAfterSplitting");
+  });
 
 document.getElementById("reSplitAces").addEventListener("change", function () {
   changeOptions("reSplitAces");
@@ -158,8 +103,11 @@ function openOptions() {
   document.getElementById("decksP").style = "display: block;";
   document.getElementById("penetrationP").style = "display: block;";
   document.getElementById("decks").value = localStorage.getItem("decks");
-  document.getElementById("penetration").value = localStorage.getItem("penetration");
-  document.getElementById("bankroll").setAttribute("value", localStorage.getItem("bankroll"));
+  document.getElementById("penetration").value =
+    localStorage.getItem("penetration");
+  document
+    .getElementById("bankroll")
+    .setAttribute("value", localStorage.getItem("bankroll"));
 
   if (localStorage.getItem("hitOn17") == "true") {
     document.getElementById("hitOn17CheckBox").checked = true;
@@ -191,7 +139,9 @@ function openOptions() {
     document.getElementById("SurrenderCheckBox").checked = false;
   }
 
-  document.getElementById(`maxSplits${localStorage.getItem("maxSplits")}`).checked = true;
+  document.getElementById(
+    `maxSplits${localStorage.getItem("maxSplits")}`
+  ).checked = true;
 }
 
 function closeOptions() {
@@ -199,12 +149,16 @@ function closeOptions() {
   return;
 }
 
-document.getElementById("countingBasics").addEventListener("click", function () {
-  document.getElementById("countingBasicsScreen").style.display = "block";
-});
-document.getElementById("closeCountingBasics").addEventListener("click", function () {
-  document.getElementById("countingBasicsScreen").style.display = "none";
-});
+document
+  .getElementById("countingBasics")
+  .addEventListener("click", function () {
+    document.getElementById("countingBasicsScreen").style.display = "block";
+  });
+document
+  .getElementById("closeCountingBasics")
+  .addEventListener("click", function () {
+    document.getElementById("countingBasicsScreen").style.display = "none";
+  });
 
 document.getElementById("gameRules").addEventListener("click", function () {
   openOptions();
