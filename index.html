@@ -19,7 +19,14 @@
     </div>
     <div id="optionsPanel">
       <p id="closeOptions">&times;</p>
-      <p>Bankroll $<input type="number" min="1000" max="100000" value="2000" id="bankroll" /></p>
+      <p>
+        Bankroll $<input
+          type="number"
+          min="1000"
+          max="100000"
+          value="2000"
+          id="bankroll" />
+      </p>
       <p id="decksP">
         Number Of Decks
         <select id="decks">
@@ -95,28 +102,46 @@
       <p id="closeCountingBasics">&times;</p>
       <h1>Basics To Counting Cards</h1>
       <p>
-        Card counting is a strategy used in Blackjack to determine whether the next hand is likely to give an advantage to the player or the dealer. It involves tracking the ratio of high to low cards
-        remaining in the deck.
+        Card counting is a strategy used in Blackjack to determine whether the
+        next hand is likely to give an advantage to the player or the dealer. It
+        involves tracking the ratio of high to low cards remaining in the deck.
       </p>
       <h2>Card Values</h2>
-      <p>High cards (10, Jack, Queen, King, Ace): These favor the player because they increase the chance of hitting Blackjack (21) or making strong hands.</p>
-      <p>Low cards (2 through 6): These favor the dealer, as they help prevent the dealer from busting when they hit.</p>
+      <p>
+        High cards (10, Jack, Queen, King, Ace): These favor the player because
+        they increase the chance of hitting Blackjack (21) or making strong
+        hands.
+      </p>
+      <p>
+        Low cards (2 through 6): These favor the dealer, as they help prevent
+        the dealer from busting when they hit.
+      </p>
       <p>Neutral cards (7, 8, 9): These have little impact on the count.</p>
       <br />
       <p>2 to 6 = +1 (low cards, favorable to the dealer)</p>
       <p>7 to 9 = 0 (neutral cards)</p>
       <p>10, J, Q, K, Ace = -1 (high cards, favorable to the player)</p>
       <br />
-      <p>Begin counting from 0 at the start of each game when a fresh shoe is used. Every time a card is dealt, you add or subtract based on its value.</p>
+      <p>
+        Begin counting from 0 at the start of each game when a fresh shoe is
+        used. Every time a card is dealt, you add or subtract based on its
+        value.
+      </p>
       <h2>True Count</h2>
       <p>
-        You need to adjust your running count into the True Count to account for how many decks are still in play. Divide the running count by the estimated number of decks remaining in the shoe. For
-        example, if the running count is +10 and there are 5 decks left, the True Count is +2.
+        You need to adjust your running count into the True Count to account for
+        how many decks are still in play. Divide the running count by the
+        estimated number of decks remaining in the shoe. For example, if the
+        running count is +10 and there are 5 decks left, the True Count is +2.
       </p>
       <h2>Adjust Betting</h2>
       <p>
-        The higher the True Count (i.e., when more high cards are left in the deck), the better the player's chances of winning. Increase your bet when the count is high (True Count +2 or higher), as
-        the chances of getting a favorable hand (like Blackjack) increase. Lower your bet when the count is low (True Count below +1 or in the negatives), as the odds are more in favor of the dealer.
+        The higher the True Count (i.e., when more high cards are left in the
+        deck), the better the player's chances of winning. Increase your bet
+        when the count is high (True Count +2 or higher), as the chances of
+        getting a favorable hand (like Blackjack) increase. Lower your bet when
+        the count is low (True Count below +1 or in the negatives), as the odds
+        are more in favor of the dealer.
       </p>
     </div>
 
@@ -128,13 +153,13 @@
       >
     </div>
     <div id="modes">
-      <a href="/HTML/learn.html"
+      <a class="modeA" href="/HTML/learn.html"
         ><div id="learn">
           <img id="learnimg" src="img/cartoon __ Cartoon.jpeg" alt="Play" />
           <p>Learn</p>
         </div></a
       >
-      <a href="/HTML/play.html"
+      <a class="modeA" href="/HTML/play.html"
         ><div id="play">
           <img id="playimg" src="img/cartoon __ Cartoon.jpeg" alt="Play" />
           <p>Play</p>
