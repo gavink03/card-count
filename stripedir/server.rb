@@ -7,7 +7,7 @@ Stripe.api_key = 'pk_test_51OzJi3P4m0D4zmKZUpkUDXPcSYrrEgKOVJIxK6vBn69VqrgeWJSGa
 set :static, true
 set :port, 4242
 
-YOUR_DOMAIN = 'http://localhost:4242'
+YOUR_DOMAIN = 'http://localhost:8000/index.html'
 
 post '/create-checkout-session' do
   prices = Stripe::Price.list(
@@ -57,7 +57,7 @@ post '/webhook' do
   # If you are testing with the CLI, find the secret by running 'stripe listen'
   # If you are using an endpoint defined with the API or dashboard, look in your webhook settings
   # at https://dashboard.stripe.com/webhooks
-  webhook_secret = 'we_1QEao7P4m0D4zmKZfdeQlMk1'
+  webhook_secret = 'whsec_Jy1lOb4eZJy1xQv7ovrcfjwF1chWs0hW'
   payload = request.body.read
   if !webhook_secret.empty?
     # Retrieve the event by verifying the signature using the raw body and secret if webhook signing is configured.
