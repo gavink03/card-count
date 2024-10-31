@@ -8,6 +8,7 @@ AddType text/javascript .mjs
 </IfModule>
 
 # Enable Passenger
+
 PassengerEnabled on
-PassengerAppRoot /home/your_username/public_html
-PassengerRuby /usr/bin/ruby  # Replace with your Ruby path if different
+PassengerAppRoot /home/u517463155/domains/card-count.com
+PassengerRuby /usr/bin/ruby # Replace with your Ruby path if different
