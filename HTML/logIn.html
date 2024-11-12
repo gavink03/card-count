@@ -13,7 +13,10 @@
 
     <!-- FirebaseUI for Firebase 8 -->
     <script src="https://www.gstatic.com/firebasejs/ui/6.1.0/firebase-ui-auth.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.1.0/firebase-ui-auth.css" />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://www.gstatic.com/firebasejs/ui/6.1.0/firebase-ui-auth.css" />
   </head>
   <body>
     <h1 id="title">Card-Count.com</h1>
@@ -22,7 +25,9 @@
 
     <!-- Buttons for sign out, check user email, and log user email -->
     <button id="sign-out-button" style="display: none">Sign Out</button>
-    <button id="check-user-button" style="display: none">Check User Email</button>
+    <button id="check-user-button" style="display: none">
+      Check User Email
+    </button>
     <button id="log-email-button" style="display: none">Log User Email</button>
 
     <script type="text/javascript">
@@ -43,7 +48,7 @@
 
       // FirebaseUI config
       var uiConfig = {
-        signInSuccessUrl: "https://card-count.com/authHandler.html", // Redirect after sign-in
+        signInSuccessUrl: "https://card-count.com/index.html", // Redirect after sign-in
         signInOptions: [
           {
             provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
