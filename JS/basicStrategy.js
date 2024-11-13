@@ -2532,6 +2532,46 @@ function clearTable() {
   document.getElementById("hb4").style = "display: none;";
 }
 
+function highlightChips() {
+  chipsOutline = document.getElementById("chipsOutline");
+  chipsOutline.style.display = "flex";
+  most = 0;
+  differentChips = 0;
+  allChips = [
+    numchip05,
+    numchip1,
+    numchip5,
+    numchip10,
+    numchip20,
+    numchip25,
+    numchip50,
+    numchip100,
+    numchip250,
+    numchip500,
+    numchip1000,
+    numchip2000,
+    numchip5000,
+  ];
+  for (chip of allChips) {
+    if (chip > most) {
+      most = chip;
+    }
+  }
+  for (chip of allChips) {
+    if (chip > 0) {
+      differentChips++;
+    }
+  }
+  height = most * 7 + 103;
+  chipsOutline.style.height = height + "px";
+  width = differentChips * 113;
+  chipsOutline.style.width = width + "px";
+
+  setTimeout(() => {
+    chipsOutline.style.display = "none";
+  }, 500);
+}
+
 document.getElementById("deal").addEventListener("click", function () {
   if (playerBet1.length != 0) {
     dealDealer();
@@ -2539,6 +2579,8 @@ document.getElementById("deal").addEventListener("click", function () {
     if (calculatePlayerHand(hand1) != 21 && calculateDealerHand() == 21) {
       stand(hand1);
     }
+  } else {
+    highlightChips();
   }
 });
 document.getElementById("hit").addEventListener("click", function () {

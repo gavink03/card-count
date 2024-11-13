@@ -101,6 +101,16 @@ body {
   width: 93px;
 }
 
+#chipsOutline {
+  display: none;
+  position: fixed;
+  margin-left: 10px;
+  bottom: 10px;
+  border-radius: 20px;
+  outline: white solid 0px;
+  box-shadow: inset 0px 0px 10px 1px white, 0px 0px 10px 1px white;
+}
+
 #hit,
 #stand,
 #split,
