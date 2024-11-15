@@ -280,14 +280,10 @@ input:checked + .slider:before {
   margin-right: 30px;
 }
 
-.g-signin2 {
-  display: flex;
-}
-
 @media only screen and (max-width: 600px) {
   #basicStrategy {
-    width: 350px;
-    height: 150px;
+    width: 280px;
+    height: 100px;
     margin-bottom: 10px;
     display: flex;
     justify-content: center;
@@ -297,18 +293,17 @@ input:checked + .slider:before {
 
   #learn,
   #play {
-    width: 350px;
-    height: 480px;
-    margin: 10px;
+    width: 280px;
+    height: 384px;
   }
   #learn #learnimg,
   #play #playimg {
-    width: 350px;
+    width: 280px;
   }
 
   #basic,
   #modes {
-    width: 100%;
+    width: fit-content;
     margin-left: 115px;
     position: relative;
     display: flex;
@@ -316,6 +311,24 @@ input:checked + .slider:before {
     justify-content: center;
     align-items: center;
     top: 10px;
+  }
+
+  #basic {
+    width: auto;
+  }
+
+  #basicStrategy {
+    font-size: 35px;
+  }
+
+  #learn P,
+  #play P {
+    margin: 15px;
+    font-size: 80px;
+  }
+
+  .modeA {
+    margin: 10px;
   }
 
   .sidenav {

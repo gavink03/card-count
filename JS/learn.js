@@ -109,12 +109,22 @@ var all = Array.from({ length: decks }, () => cards).flat();
 const fullShoe = Array.from({ length: decks }, () => cards).flat();
 var errors = [];
 
-if (hitOn17 === "true") {
-  document.getElementsByTagName("body")[0].style.backgroundImage =
-    "url(/img/tableBGH.png)";
+body = document.getElementsByTagName("body")[0];
+
+if (window.screen.width > window.screen.height) {
+  if (hitOn17 === "true") {
+    body.style.backgroundImage = "url(/img/tableBGH.png)";
+  } else {
+    body.style.backgroundImage = "url(/img/tableBGS.png)";
+  }
 } else {
-  document.getElementsByTagName("body")[0].style.backgroundImage =
-    "url(/img/tableBGS.png)";
+  if (hitOn17 === "true") {
+    body.style =
+      "background-size: cover; background-image: url(/img/tableBGHM.png);";
+  } else {
+    body.style =
+      "background-size: cover; background-image: url(/img/tableBGSM.png);";
+  }
 }
 
 const chip05 = 0.5;
@@ -1975,6 +1985,10 @@ function split(hand, shand, handID, handID2) {
       break;
   }
 
+  if (window.screen.width < window.screen.height) {
+    document.getElementById("playerHand").style.marginLeft = "100px";
+  }
+
   highlightHand();
 }
 
@@ -2728,6 +2742,11 @@ function clearTable() {
       child = src.lastElementChild;
     }
   }
+
+  if (window.screen.width < window.screen.height) {
+    document.getElementById("playerHand").style.marginLeft = "0px";
+  }
+
   clearCards("dealerHand");
   clearCards("hand1");
   clearCards("hand2");
@@ -3314,6 +3333,7 @@ document.getElementById("chips5000").addEventListener("click", function () {
 
 document.getElementById("endGame").addEventListener("click", function () {
   if (errors.length > 0) {
+    document.getElementById("errors").style.fontSize = "14px";
     for (error of errors) {
       var wrongMove = "";
       var correctMove = "";
@@ -3363,6 +3383,7 @@ document.getElementById("endGame").addEventListener("click", function () {
       errorsDiv.appendChild(newParagraph);
     }
   } else {
+    document.getElementById("errors").style.fontSize = "30px";
     document.getElementById("errors").innerHTML = "No Errors";
   }
   document.getElementById("endGameScreen").style.display = "block";
@@ -3394,17 +3415,26 @@ document.getElementById("span").addEventListener("click", function () {
 
 function openbasicStrategyCard() {
   if (
-    document.getElementById("basicStrategyCardTable").style.fontSize == "19px"
+    document.getElementById("basicStrategyCardTable").style.fontSize ==
+      "19px" ||
+    document.getElementById("basicStrategyCardTable").style.fontSize == "17px"
   ) {
     document.getElementById("basicStrategyCardTable").style =
       "font-size: 1px;width: 50px; height: 168px";
     document.getElementById("countInput").style = "display: none;";
     document.getElementById("endGameDiv").style = "right: 50px;";
   } else {
-    document.getElementById("basicStrategyCardTable").style =
-      "font-size: 19px;width: auto;height: 96% ";
-    document.getElementById("countInput").style = "display: inline-block;";
-    document.getElementById("endGameDiv").style = "right: 350px;";
+    if (window.screen.width < window.screen.height) {
+      document.getElementById("basicStrategyCardTable").style =
+        "font-size: 17px;width: auto;height: 96% ";
+      document.getElementById("countInput").style = "display: inline-block;";
+      document.getElementById("endGameDiv").style = "right: 350px;";
+    } else {
+      document.getElementById("basicStrategyCardTable").style =
+        "font-size: 19px;width: auto;height: 96% ";
+      document.getElementById("countInput").style = "display: inline-block;";
+      document.getElementById("endGameDiv").style = "right: 350px;";
+    }
   }
 }
 

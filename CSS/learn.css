@@ -8,7 +8,7 @@ body {
   text-align: center;
   margin: 0px;
   background-image: url(/img/tableLoading.png);
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position-x: center;
   background-position-y: center;
@@ -29,13 +29,13 @@ body {
   font-size: 14px;
   font-weight: 600;
   line-height: 20px;
-  padding: 6px 0px;
   position: relative;
   text-align: center;
   user-select: none;
   touch-action: manipulation;
   vertical-align: middle;
   width: 90px;
+  height: 32px;
 }
 
 .button:hover {
@@ -85,8 +85,9 @@ body {
 #chips {
   position: fixed;
   display: flex;
+  align-items: flex-end;
   height: 300px;
-  bottom: -180px;
+  bottom: 100px;
   margin-left: 10px;
 }
 
@@ -143,6 +144,7 @@ td {
   color: white;
   text-align: center;
   border-spacing: 0px;
+  z-index: 1;
 }
 
 #countInput {
@@ -160,7 +162,7 @@ input[type="number"]::-webkit-outer-spin-button {
 #dealerHand {
   margin: auto;
   height: 165px;
-  width: 506px;
+  width: 100%;
 }
 
 #game img,
@@ -362,19 +364,25 @@ body #span {
   height: 50px;
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 900px) {
+  body {
+    box-shadow: 0 0 20px 20px #027339 inset;
+  }
   .chips img {
-    height: 40px;
-    width: 40px;
-    margin-bottom: -43px;
+    height: 50px;
+    width: 50px;
+    margin-bottom: -54px;
+  }
+  .chips {
+    margin: 5px;
   }
   #chips {
-    bottom: -230px;
+    bottom: 55px;
   }
   #progressBarDiv {
-    margin: 20px 10px 10px;
+    margin: 10px 10px 10px;
+    top: 300px;
     width: 86px;
-    top: 20px;
   }
   #progressBarDecks {
     height: 206px;
@@ -385,21 +393,47 @@ body #span {
   }
   #game img,
   #dealerHand img,
-  #playerHand img {
-    width: 55px;
+  #playerHand #hand1 img,
+  #playerHand #hand2 img,
+  #playerHand #hand3 img,
+  #playerHand #hand4 img {
+    width: 60px;
+    height: 87px;
     margin: 5px;
   }
+  #playerHand img {
+    width: 50px;
+  }
   #playerHand {
-    margin-top: 0px;
+    margin: 0px;
+  }
+  #dealerHand {
+    height: 250px;
+    width: 210px;
   }
   #bet {
     margin-top: 5px;
   }
   .button {
-    width: 75px;
-    height: 30px;
+    height: 25px;
+    width: 70px;
+    font-size: 12px;
   }
-  body {
-    box-shadow: 0 0 100px 50px #027339 inset;
+  #errors {
+    margin-top: 100px;
+    margin-bottom: 10px;
+    font-size: 30px;
+  }
+  #homeScreen,
+  #newGame,
+  #cancleMove,
+  #goAgainstBestMove {
+    font-size: 20px;
+    margin: 7px;
+    width: fit-content;
+  }
+  #wlTotal {
+    font-size: 30px;
+    margin-top: 20px;
   }
 }
