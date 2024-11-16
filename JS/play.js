@@ -2550,15 +2550,19 @@ function highlightChips() {
       most = chip;
     }
   }
-  for (chip of allChips) {
-    if (chip > 0) {
-      differentChips++;
-    }
+
+  if (window.screen.width > window.screen.height) {
+    height = most * 7 + 103;
+  } else {
+    height = most * 4 + 54;
   }
-  height = most * 7 + 103;
   chipsOutline.style.height = height + "px";
-  width = differentChips * 113;
-  chipsOutline.style.width = width + "px";
+
+  chipsOutline.style.width = `${
+    document.getElementById("chips").offsetWidth
+  }px`;
+  console.log(document.getElementById("chips").offsetWidth);
+  console.log(document.getElementById("chipsOutline").offsetWidth);
 
   setTimeout(() => {
     chipsOutline.style.display = "none";

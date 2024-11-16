@@ -3173,8 +3173,8 @@ document.getElementById("span").addEventListener("click", function () {
 function openbasicStrategyCard() {
   if (
     document.getElementById("basicStrategyCardTable").style.fontSize ==
-      "19px" ||
-    document.getElementById("basicStrategyCardTable").style.fontSize == "17px"
+      "17px" ||
+    document.getElementById("basicStrategyCardTable").style.fontSize == "16px"
   ) {
     document.getElementById("basicStrategyCardTable").style =
       "font-size: 1px;width: 50px; height: 168px";
@@ -3182,12 +3182,12 @@ function openbasicStrategyCard() {
   } else {
     if (window.screen.width < window.screen.height) {
       document.getElementById("basicStrategyCardTable").style =
-        "font-size: 17px;width: auto;height: 96% ";
+        "font-size: 16px;width: auto;height: 82% ";
       document.getElementById("countInput").style = "display: inline-block;";
       document.getElementById("endGameDiv").style = "right: 350px;";
     } else {
       document.getElementById("basicStrategyCardTable").style =
-        "font-size: 19px;width: auto;height: 96% ";
+        "font-size: 17px;width: auto;height: 96% ";
       document.getElementById("countInput").style = "display: inline-block;";
       document.getElementById("endGameDiv").style = "right: 350px;";
     }
