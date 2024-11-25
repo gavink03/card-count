@@ -4,6 +4,7 @@
     <title>card Count</title>
     <link rel="stylesheet" href="CSS/home.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://js.stripe.com/v3/"></script>
   </head>
   <body>
     <div id="mySidenav" class="sidenav">
@@ -14,9 +15,7 @@
       <p id="countingBasics">Basics to counting cards</p>
       <a href="/HTML/settings.html">Settings</a>
       <a href="/stripe/public/checkout.html">Stripe</a>
-      <a id="logIn" href="/HTML/logIn.html"
-        ><p id="pfp"><img src="img/pfp.jpeg" alt="profile" /></p
-      ></a>
+      <img src="img/pfp.jpeg" id="logIn" alt="profile" />
     </div>
     <div id="optionsPanel">
       <p id="closeOptions">&times;</p>
@@ -156,17 +155,21 @@
     <div id="modes">
       <a class="modeA" href="/HTML/learn.html"
         ><div id="learn">
-          <img id="learnimg" src="img/cartoon __ Cartoon.jpeg" alt="Play" />
+          <img id="learnimg" src="img/learnCartoon.png" alt="Play" />
           <p>Learn</p>
-        </div></a
-      >
+          <img class="membership" src="/img/membership.png" /></div
+      ></a>
       <a class="modeA" href="/HTML/play.html"
         ><div id="play">
-          <img id="playimg" src="img/cartoon __ Cartoon.jpeg" alt="Play" />
+          <img id="playimg" src="img/cartoon __ Cartoon.png" alt="Play" />
           <p>Play</p>
-        </div></a
-      >
+          <img class="membership" src="/img/membership.png" /></div
+      ></a>
     </div>
-    <script type="module" src="JS/home.js"></script>
+    <script src="JS/home.js"></script>
+    <script
+      type="module"
+      src="/clerk/clerk-javascript/dist/assets/index-Bhiofdil.js"
+      defer></script>
   </body>
 </html>

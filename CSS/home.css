@@ -43,15 +43,12 @@ a,
   cursor: pointer;
 }
 
-#pfp img {
-  height: 100%;
-  border-radius: 50%;
-}
-#pfp {
+#logIn {
   height: 5%;
   position: absolute;
   bottom: 10px;
   padding: 10px;
+  border-radius: 50%;
 }
 
 #basic {
@@ -94,6 +91,7 @@ a,
 }
 
 #play {
+  position: relative;
   text-align: center;
   width: 410px;
   height: 575px;
@@ -122,6 +120,7 @@ a,
 }
 
 #learn {
+  position: relative;
   text-align: center;
   width: 410px;
   height: 575px;
@@ -147,6 +146,13 @@ a,
 #basicStrategy:hover {
   box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.4);
   background-color: #171614;
+}
+
+.membership {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
 #optionsPanel {

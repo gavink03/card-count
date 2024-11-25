@@ -1,5 +1,3 @@
-document.getElementById();
-
 function onSignIn(response) {
   const credential = response.credential;
 

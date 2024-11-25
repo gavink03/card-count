@@ -30,15 +30,15 @@
             var token = result.credential.accessToken;
             console.log("Google sign-in successful:", result.user);
             // Redirect to your desired page or dashboard after successful login
-            window.location.href = "https://card-count.com/index.html"; // Redirect after success
+            window.location.href = "https://card-count.com/"; // Redirect after success
           } else {
             console.log("No sign-in credentials found.");
-            window.location.href = "https://card-count.com/index.html"; // Redirect back to login if no credentials
+            window.location.href = "https://card-count.com/"; // Redirect back to login if no credentials
           }
         })
         .catch(function (error) {
           console.error("Error during Google sign-in:", error);
-          window.location.href = "https://card-count.com/index.html"; // Redirect back to login on error
+          window.location.href = "https://card-count.com/"; // Redirect back to login on error
         });
     </script>
   </body>
